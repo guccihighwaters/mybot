@@ -1,8 +1,8 @@
 import time
 import vk_api
 
-vk = vk_api.VkApi(login='login', password='password')
-# vk_api.VkApi(token = 'a02d...e83fd') #Авторизоваться как сообщество
+#vk = vk_api.VkApi(login='login', password='password') #Авторизироваться как пользователь
+vk_api.VkApi(token = 'a02d...e83fd') #Авторизоваться как сообщество
 vk.auth()
 
 
@@ -17,5 +17,5 @@ while True:
     if response['items']:
         values['last_message_id'] = response['items'][0]['id']
     for item in response['items']:
-        write_msg(item[u'user_id'], u'Привет, Хабр!')
+        write_msg(item[u'user_id'], u'your message')
     time.sleep(1)
